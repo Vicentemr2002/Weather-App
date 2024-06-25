@@ -3,4 +3,5 @@
     <string name="Btn_cambio">Pronostico Actual</string>
     <string name="Btn_listado">Listado de ciudades</string>
     <string name="Btn_Volver">Volver</string>
+    <string name="tv1">Ciudades</string>
 </resources>

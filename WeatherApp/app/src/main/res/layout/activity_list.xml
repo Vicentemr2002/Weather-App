@@ -5,21 +5,49 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".ListActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Segunda Activity"
-        tools:layout_editor_absoluteX="256dp"
-        tools:layout_editor_absoluteY="112dp" />
+        android:background="#033FF4"
+        android:padding="10sp"
+        android:textColor="#3F51B5"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/button3"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#033FF4"
+        android:onClick="volve"
+        android:text="@string/Btn_Volver"
+        app:layout_constraintTop_toBottomOf="@+id/lv1"
+        tools:layout_editor_absoluteX="161dp" />
+
+    <ListView
+        android:id="@+id/lv1"
+        android:layout_width="411dp"
+        android:layout_height="301dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="328dp"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv1"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Btn_Volver"
-        tools:layout_editor_absoluteX="262dp"
-        tools:layout_editor_absoluteY="166dp" />
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="@string/tv1"
+        android:textSize="29sp"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:layout_editor_absoluteX="145dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

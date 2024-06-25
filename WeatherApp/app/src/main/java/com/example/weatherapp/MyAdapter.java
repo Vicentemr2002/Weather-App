@@ -1,8 +1,11 @@
 package com.example.weatherapp;
 
-import android.content.Intent;
+
 import android.os.Bundle;
-import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,33 +13,30 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+public class MyAdapter extends AppCompatActivity {
 
+    private TextView tv1;
+    private ListView lv1;
 
-public class MainActivity extends AppCompatActivity {
+    private String[] ciudad={"Barinas","Merida","Socopo","Zulia","Caracas"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_my_adapter);
+
+        tv1 = (TextView)findViewById(R.id.tv1);
+        lv1 = (ListView)findViewById(R.id.lv1);
+
+        ArrayAdapter<String> adapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,ciudad);
+
+        lv1.setAdapter(adapter);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
     }
-
-    public void siguient(View view) {
-        Intent siguiente = new Intent(this, ListActivity.class);
-        startActivity(siguiente);
-    }
-
-    public void otro(View view) {
-        Intent siguiente = new Intent(this, DetailActivity.class);
-        startActivity(siguiente);
-    }
 }
-
-
-
-
