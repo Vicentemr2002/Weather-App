@@ -15,10 +15,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MyAdapter extends AppCompatActivity {
 
-    private TextView tv1;
-    private ListView lv1;
 
-    private String[] ciudad={"Barinas","Merida","Socopo","Zulia","Caracas"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +24,6 @@ public class MyAdapter extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_my_adapter);
 
-        tv1 = (TextView)findViewById(R.id.tv1);
-        lv1 = (ListView)findViewById(R.id.lv1);
-
-        ArrayAdapter<String> adapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,ciudad);
-
-        lv1.setAdapter(adapter);
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
         });
     }
 }
