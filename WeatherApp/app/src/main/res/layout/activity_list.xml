@@ -17,17 +17,6 @@
         android:textColor="#3F51B5"
         android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="60dp"
-        android:backgroundTint="#033FF4"
-        android:onClick="volve"
-        android:text="@string/Btn_Volver"
-        app:layout_constraintTop_toBottomOf="@+id/lv1"
-        tools:layout_editor_absoluteX="161dp" />
-
     <ListView
         android:id="@+id/lv1"
         android:layout_width="411dp"
@@ -38,7 +27,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv1"
         app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="0dp" >
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="28dp"
+            android:backgroundTint="#033FF4"
+            android:onClick="volve"
+            android:text="@string/Btn_Volver" />
+    </ListView>
 
     <TextView
         android:id="@+id/tv1"

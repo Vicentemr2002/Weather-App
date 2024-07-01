@@ -4,6 +4,9 @@ package com.example.weatherapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
 
 import androidx.activity.EdgeToEdge;
@@ -16,6 +19,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class ListActivity extends AppCompatActivity{
 
+    private TextView tv1;
+    private ListView lv1;
+
+    private String[] ciudad={"Barinas","Merida","Socopo","Zulia","Caracas"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -23,6 +31,14 @@ public class ListActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_list);
+
+        tv1 = (TextView)findViewById(R.id.tv1);
+        lv1 = (ListView)findViewById(R.id.lv1);
+
+
+        ArrayAdapter<String> adapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,ciudad);
+
+        lv1.setAdapter(adapter);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
