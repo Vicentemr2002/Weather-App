@@ -24,10 +24,10 @@ public class DetailActivity extends AppCompatActivity {
         TextView temperatureminTextView = findViewById(R.id.temperaturaMinima);
         TextView temperaturamaxTextView = findViewById(R.id.temperaturaMaxima);
 
-        cityNameTextView.setText("Ciudad de Prueba");
-        temperatureTextView.setText("25°C");
-        temperatureminTextView.setText("Soleado");
-        temperaturamaxTextView.setText("Maximo Sol");
+        cityNameTextView.setText("barinas");
+        temperatureTextView.setText("Temperatura 25°C");
+        temperatureminTextView.setText("Temperatura Minima Soleado");
+        temperaturamaxTextView.setText("Temperatura Maxima Maximo Sol");
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
