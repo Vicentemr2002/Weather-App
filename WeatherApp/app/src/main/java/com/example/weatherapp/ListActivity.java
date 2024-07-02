@@ -25,9 +25,6 @@ public class ListActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        tv1 = (TextView)findViewById(R.id.tv1);
-        lv1 = (ListView)findViewById(R.id.lv1);
-
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_list);
@@ -46,22 +43,13 @@ public class ListActivity extends AppCompatActivity{
             return insets;
         });
 
-        ArrayAdapter<String> adapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,ciudad);
-
-        lv1.setAdapter(adapter);
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-
 
     }
+        public void volve(View view) {
+            Intent volver = new Intent(this, MainActivity.class);
+            startActivity(volver);
+        }
 
-    public void volve(View view) {
-        Intent volver = new Intent(this, MainActivity.class);
-        startActivity(volver);
-    }
 
 }
 
